@@ -1,0 +1,379 @@
+{% load static %}
+<!--{% static "img/" as baseURL %}-->
+<! DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Newrup Tech Solutions</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png'%}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/remixicon/remixicon.css'%}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Reveal
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div id="logo">
+        <h1><a href="index.html">New<span>rup</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#clients">Parteners</a></li>
+          <li class="dropdown"><a href="#"><span>Links</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              {% for link in link %}
+                <li><a href="{{link.doc.url}}">{{link.name}}</a></li>
+                {% endfor %}
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= hero Section ======= -->
+  <section id="hero">
+
+    <div class="hero-content" data-aos="fade-up">
+      <h2>Making <span>your ideas</span><br>happen!</h2>
+      <div>
+        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <a href="#call-to-action" class="btn-projects scrollto">Join now</a>
+      </div>
+    </div>
+       <div class="hero-slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image: url({%static 'img/hero-carousel/7.jpg'%});"></div>
+        <div class="swiper-slide" style="background-image: url({%static 'img/hero-carousel/8.jpg'%});"></div>
+        <div class="swiper-slide" style="background-image: url({%static 'img/hero-carousel/6.jpg'%});"></div>
+        <div class="swiper-slide" style="background-image: url({%static 'img/hero-carousel/1.jpg'%});"></div>
+        <div class="swiper-slide" style="background-image: url({%static 'img/hero-carousel/5.jpg'%});"></div>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+   <!--start social-->
+    <div class="position-fixed">
+      <div class="contact-about">
+        <div class="social-links ">
+          <a href="#" class="twitter fs-4 "><i class="bi bi-twitter"></i></a>
+          <a href="#" class="facebook fs-4 "><i class="bi bi-facebook"></i></a>
+          <a href="#" class="linkedin fs-4 "><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+   <!--end social-->
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+            {% for about in about %}
+          <div class="col-lg-6 about-img">
+            <img src="{{about.img.url}}" alt="">
+          </div>
+          <div class="col-lg-6 content">
+            <div class="section-header">
+              <h2>About Us</h2>
+            </div>
+            <h3>{{about.des}}</h3>
+          </div>
+            {% endfor %}
+        </div>
+      </div>
+    </section>
+      <!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Services</h2>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+        </div>
+
+        <div class="row gy-4">
+          {% for services in services %}
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="box">
+              <div class="icon"><i class="{{services.icon}}"></i></div>
+              <h4 class="title"><a href="">{{services.title}}</a></h4>
+              <p class="description">{{services.des}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+    <section id="service">
+       <div class="container" data-aos="fade-up">
+         <h1 class="text-center p-0 mb-0">How we Started</h1>
+           {% for image in image  %}
+        <img src="{{image.img.url}}" class="img-fluid">
+           {% endfor %}
+       </div>
+    </section>
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Parteners</h2>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+        </div>
+          <div class="clients-slider swiper" data-aos="fade-up" data-aos-delay="100">
+              <div class="swiper-wrapper align-items-center h-100">
+              {% for partner in partner %}
+                <div class="swiper-slide"><img src="{{partner.img.url}}" class="img-fluid" alt=""></div>
+              {% endfor %}
+             </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- End Clients Section -->
+
+      <!--video section-->
+      <section id="video">
+      <div class="container">
+        <div class="embed-responsive embed-responsive-16by9">
+        <iframe width=100% height="515px" src="https://www.youtube-nocookie.com/embed/1kUE0BZtTRc?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      </section>
+      <!--end video-->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Portfolio</h2>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-product">Products</li>
+              <li data-filter=".filter-achivement">Achivements</li>
+              <li data-filter=".filter-photo">Photos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          {% for product in product %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-product">
+            <img src="{%static 'img/portfolio/portfolio-1.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>{{product.topic}}</h4>
+              <p>{{product.date}}</p>
+              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="{{product.link}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+          {% endfor %}
+          {% for achivement in achivement %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-achivement">
+            <img src="{%static 'img/portfolio/portfolio-2.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>{{achivement.topic}}</h4>
+              <p>{{achivement.date}}</p>
+              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="{{achivement.link}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+          {% endfor %}
+          {% for photo in photo %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
+            <img src="{%static 'img/portfolio/portfolio-3.jpg'%}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>{{photo.topic}}</h4>
+              <p>{{photo.date}}</p>
+              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="{{photo.link}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Testimonials</h2>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="swiper-wrapper">
+           {% for testimonial in testimonial %}
+           <div class="swiper-slide">
+              <div class="testimonial-item">
+               <img src="{{testimonial.img.url}}" class="testimonial-img" alt="">
+                <h3>{{testimonial.name}}</h3>
+                <h4>{{testimonial.pos}}</h4>
+                <p>
+                 <img src="{% static 'img/quote-sign-left.png'%}" class="quote-sign-left" alt="">
+                  {{testimonial.des}}
+                  <img src="{% static 'img/quote-sign-right.png'%}" class="quote-sign-right" alt="">
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Testimonials Section -->
+
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action">
+      <div class="container" data-aos="zoom-out">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title">Chat with us</h3>
+            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="https://wa.me/+919337157249">Chat now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Call To Action Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+        </div>
+        <div class="row contact-info">
+          <div class="col-lg-6 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="info row p-4">
+              <div class="col-md-4">
+                 <i class="bi bi-geo-alt"></i>
+                 <p>OUTR Ghatikia<br>Bhubaneswar,Odisha</p>
+              </div>
+              <div class="col-md-4">
+                 <i class="bi bi-envelope"></i>
+                 <p>newruptech@gmail.com</p>
+              </div>
+               <div class="col-md-4">
+                  <i class="bi bi-phone"></i>
+                  <p>+91-7991080926</p>
+                  <p>+91-7978369574</p>
+                </div>
+            </div>
+          </div>
+          <div class="container col-md-6">
+            <div class="form">
+              <form method="post">
+               {% csrf_token %}
+                <div class="row">
+                  <div class="form-group">
+                    <input required type="text" class="form-control rounded-0 border border-success" name="name" id="name" placeholder="name" required>
+                 </div>
+                 <div class="form-group col-md-6 mt-3">
+                  <input required type="text" name="phone" class="form-control rounded-0 border border-success" id="phone" placeholder="phone no." required>
+                </div>
+                <div class="form-group col-md-6 mt-3">
+                  <input required type="email" class="form-control rounded-0 border border-success" name="email" id="email" placeholder="email" required>
+                </div>
+              </div>
+             <div class="form-group mt-3 border border-success">
+              <input  type="text" class="form-control rounded-0" name="subject" id="subject" placeholder="subject" required>
+             </div>
+            <div class="form-group mt-3 border border-success">
+              <textarea required class="form-control rounded-0" name="message" rows="5" placeholder="message" required ></textarea>
+            </div>
+            <div class="text-center mt-3"><button class="btn btn-success rounded-0" type="submit">Send Message</button></div>
+              </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+
+    <!-- End Contact Section -->
+
+      <footer id="footer">
+          <div class="container">
+              <div class="copyright">
+                  &copy; Copyright <strong>Newrup</strong>. All Rights Reserved<br>
+                   Designed by <a href="https://www.instagram.com/animesh_samal/">AnimeshSamal</a>
+              </div>
+          </div>
+      </footer>
+
+  </main><!-- End #main -->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{%static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+
+
+</body>
+
+</html>
